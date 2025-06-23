@@ -1,9 +1,17 @@
-import random
+def import_modules():
+    global random
+    import random
 
-generator_pos = [0, 0]
-used_cords = [[0, 0]]
-size = [100, 100]
-amount = 0
+
+def def_vars():
+    global generator_pos
+    global used_cords
+    global size
+    global amount
+    generator_pos = [0, 0]
+    used_cords = [[0, 0]]
+    size = [100, 100]
+    amount = 0
 
 
 def new_random():
@@ -60,10 +68,22 @@ def check_2():
         amount += 1
 
 
-while amount < 10:
-    check_if_real(generator_pos)
-for i in used_cords:
-    amount = 0
-    generator_pos = i 
+def run_everything():
+    global amount
+    global generator_pos
     while amount < 10:
         check_if_real(generator_pos)
+    for i in used_cords:
+        amount = 0
+        generator_pos = i
+        while amount < 10:
+            check_if_real(generator_pos)
+
+
+def main():
+    import_modules()
+    def_vars()
+    run_everything()
+
+
+main()
